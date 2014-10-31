@@ -1,0 +1,10 @@
+$light_back: #dadbdd;
+$dark_back: #424242;
+
+.user_container {
+  position: relative;
+  top: 12vh;
+  width: 70%;
+  margin: 0 auto;
+  background: $light_back;
+}
