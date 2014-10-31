@@ -1,13 +1,17 @@
 BadBeats.Lightbox = {
   hideLightbox: function() {
-    $('.background').hide();
-  },
-
-  fadeInLightbox: function() {
-    $('.background').fadeIn('slow');
+    $('.background, .login_lightbox, .signup_lightbox').hide();
   },
 
   fadeOutLightbox: function() {
-    $('.background').fadeOut('slow')
+    $('.background, .login_lightbox, .signup_lightbox').fadeOut('slow');
+  },
+
+  fadeInLoginForm: function() {
+    $('.login_lightbox, .background').fadeIn('slow');
+  },
+
+  fadeInSignupForm: function() {
+    $('.signup_lightbox, .background').fadeIn('slow');
   }
 }

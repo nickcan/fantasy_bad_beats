@@ -3,7 +3,8 @@ BadBeats.Controller = function(view) {};
 BadBeats.Controller.prototype = {
   bindEvents: function() {
     this.listenForComments();
-    this.showLightbox();
+    this.showLoginLightbox();
+    this.showSignupLightbox();
     this.hideLightbox();
   },
 
@@ -13,9 +14,15 @@ BadBeats.Controller.prototype = {
     })
   },
 
-  showLightbox: function() {
-    $('.login, .signup').click(function() {
-      BadBeats.Lightbox.fadeInLightbox();
+  showLoginLightbox: function() {
+    $('.login').click(function() {
+      BadBeats.Lightbox.fadeInLoginForm();
+    })
+  },
+
+  showSignupLightbox: function() {
+    $('.signup').click(function() {
+      BadBeats.Lightbox.fadeInSignupForm();
     })
   },
 

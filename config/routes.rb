@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'beats#index'
 
-  resources :users, only: [:show, :update, :destroy] do
+  resources :users, only: [:show, :create, :update, :destroy] do
     resources :beats, only: :index
   end
 
