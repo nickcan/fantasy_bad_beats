@@ -35,8 +35,6 @@ gem 'faker'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'bower-rails'
-gem 'angular-rails-templates'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
