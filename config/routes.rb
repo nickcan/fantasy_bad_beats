@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'beats#all_beats'
+  root 'beats#index'
 
   resources :users, only: [:show, :update, :destroy] do
     resources :beats, only: :index
