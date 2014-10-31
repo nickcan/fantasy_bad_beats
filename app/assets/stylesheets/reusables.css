@@ -14,3 +14,9 @@ body {
 .big-radius {
   border-radius: 30px;
 }
+
+.clearfix:after {
+  content: " ";
+  display: table;
+  clear: both;
+}

@@ -1,8 +1,8 @@
 <div class="beats_container">
   <% @beats.each do |beat| %>
   <section class="beat big-radius">
-    <article class="beat_content small-pad bord-box big-radius">
-      <h3><%= beat.content %></h3>
+    <article class="beat_content small-pad bord-box big-radius clearfix">
+      <h2><%= beat.content %></h2>
       <button class="comments_button">Comments<br><%= beat.comments.count %></button>
       <p class="post_by">Posted by: <%= link_to beat.user.name, user_path(beat.user) %></p>
       <p class="created_at">Created: <%= beat.created_at.strftime("%d %b, %Y") %></p>
@@ -10,7 +10,7 @@
     <div class="comments_container small-pad">
       <% beat.comments.each do |comment| %>
       <article class="comment small-pad bord-box big-radius">
-        <h4><%= comment.content %></h4>
+        <h3><%= comment.content %></h3>
         <p>Commenter: <%= comment.user.name %></p>
       </article>
       <% end %>
