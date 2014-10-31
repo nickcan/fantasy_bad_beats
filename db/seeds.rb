@@ -19,7 +19,9 @@ end
 class CommentSeeder
   def self.seed
     Beat.all.each do |beat|
-      beat.comments.create(content: Faker::Lorem.sentence(5, true, 7), user_id: User.all.sample.id)
+      3.times do
+        beat.comments.create(content: Faker::Lorem.sentence(5, true, 7), user_id: User.all.sample.id)
+      end
     end
   end
 end

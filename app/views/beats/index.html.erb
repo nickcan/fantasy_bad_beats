@@ -1,0 +1,6 @@
+<% @beats.each do |beat| %>
+  <p><%= beat.user.name %></p>
+  <% beat.comments.each do |comment| %>
+  <div style="border: 1px solid black"><%= comment.content %></div>
+  <% end %>
+<% end %>
