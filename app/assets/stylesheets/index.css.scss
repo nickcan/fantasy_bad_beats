@@ -3,7 +3,7 @@ $dark_back: #666666;
 
 .beats_container {
   width: 70%;
-  margin: 10vh auto;
+  margin: 12vh auto;
 
   .beat {
     background: $dark_back;
@@ -11,17 +11,16 @@ $dark_back: #666666;
 
     .beat_content {
       background: $light_back;
-      height: 21vh;
+      min-height: 21vh;
       width: 100%;
     }
 
     .comments_button {
       position: relative;
       float: right;
-      width: 10vmax;
-      height: 6vh;
+      padding: 1vh 4%;
+      top: 1vh;
       font-size: 2vh;
-      top: 2vh;
       background: #444444;
       color: white;
       border-radius: 5px;
