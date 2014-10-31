@@ -1,6 +1,19 @@
-<% @beats.each do |beat| %>
-  <p><%= beat.user.name %></p>
-  <% beat.comments.each do |comment| %>
-  <div style="border: 1px solid black"><%= comment.content %></div>
+<div class="beats_container">
+  <% @beats.each do |beat| %>
+  <section class="beat">
+    <h3><%= beat.content %></h3>
+    <button class="comments_button">Comments</button>
+    <p class="post_by">Posted by: <%= link_to beat.user.name, user_path(beat.user) %></p>
+    <p class="created_at">Created: <%= beat.created_at.strftime("%d %b, %Y") %></p>
+
+    <div class="comments_container">
+      <% beat.comments.each do |comment| %>
+      <article class="comment">
+        <h4><%= comment.content %></h4>
+        <p>Commenter: <%= comment.user.name %></p>
+      </article>
+      <% end %>
+    </div>
+  </section>
   <% end %>
-<% end %>
+</div>
