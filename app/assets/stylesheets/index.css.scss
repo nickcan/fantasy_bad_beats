@@ -1,20 +1,25 @@
-$beat_back: #dadbdd;
+$light_back: #dadbdd;
+$dark_back: #666666;
 
 .beats_container {
   width: 70%;
   margin: 10vh auto;
 
   .beat {
-    background: $beat_back;
-    border-radius: 30px;
-    padding: 1% 4%;
+    background: $dark_back;
     margin-bottom: 5vh;
+
+    .beat_content {
+      background: $light_back;
+      height: 21vh;
+      width: 100%;
+    }
 
     .comments_button {
       position: relative;
       float: right;
       width: 10vmax;
-      height: 5vh;
+      height: 6vh;
       font-size: 2vh;
       top: 2vh;
       background: #444444;
@@ -29,6 +34,12 @@ $beat_back: #dadbdd;
 
     .comments_button:hover {
       box-shadow: 2px 2px 7px 2px black;
+    }
+
+    .comment {
+      width: 90%;
+      background: $light_back;
+      margin: 3vh auto;
     }
   }
 }
