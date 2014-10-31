@@ -7,11 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="background"></div>
+  <%= render partial: 'layouts/login' %>
+  <%= render partial: 'layouts/signup' %>
+
   <header class="app-header clearfix bord-box">
     <h2 class="header-title"><%= link_to "Fantasy Bad Beats", root_path, class: "title-link" %></h2>
     <nav class="nav-container">
-      <button class="signup">Sign Up</button>
-      <button class="login">Login</button>
+      <% if current_user %>
+        <a href="<%= signout_url%>"><button class="nav-buttons signout">Sign Out</button></a>
+      <% else %>
+        <button class="nav-buttons signup">Sign Up</button>
+        <button class="nav-buttons login">Login</button>
+      <% end %>
     </nav>
   </header>
 

@@ -1,0 +1,14 @@
+<section class="login_lightbox">
+  <header class="form_header">
+    <h2>Fantasy Badbeats</h2>
+  </header>
+  <h2 class="form_title">Login</h2>
+
+  <%= form_tag '../login', class: "form" do %>
+  <%= text_field_tag :email, nil, placeholder: "Email", class: "form_field" %>
+
+  <%= password_field_tag :password, nil, placeholder: "Password", class: "form_field" %>
+
+  <%= submit_tag "Log in", class: "form_button" %>
+  <% end %>
+</section>

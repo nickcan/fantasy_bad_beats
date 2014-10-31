@@ -1,0 +1,17 @@
+<section class="signup_lightbox">
+  <header class="form_header">
+    <h2>Fantasy Bad Beats</h2>
+  </header>
+  <h2 class="form_title">Sign Up</h2>
+
+  <%= form_for User.new, html: {class: "form"} do |f| %>
+    <%= f.text_field :name, class: "form_field", placeholder: "Full Name" %>
+
+    <%= f.text_field :email, class: "form_field", placeholder: "Email" %>
+
+    <%= f.password_field :password, class: "form_field", placeholder: "Password" %>
+
+    <%= f.submit "Sign Up", class: "form_button" %>
+  <%end%>
+
+</section>
