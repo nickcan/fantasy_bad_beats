@@ -6,6 +6,7 @@ BadBeats.Controller.prototype = {
     this.showLoginLightbox();
     this.showSignupLightbox();
     this.hideLightbox();
+    this.showBeatForm();
   },
 
   listenForComments: function() {
@@ -15,20 +16,18 @@ BadBeats.Controller.prototype = {
   },
 
   showLoginLightbox: function() {
-    $('.login').click(function() {
-      BadBeats.Lightbox.fadeInLoginForm();
-    })
+    $('.login').click(BadBeats.Lightbox.fadeInLoginForm)
   },
 
   showSignupLightbox: function() {
-    $('.signup').click(function() {
-      BadBeats.Lightbox.fadeInSignupForm();
-    })
+    $('.signup').click(BadBeats.Lightbox.fadeInSignupForm)
   },
 
   hideLightbox: function() {
-    $('.background').click(function() {
-      BadBeats.Lightbox.fadeOutLightbox()
-    })
+    $('.background').click(BadBeats.Lightbox.fadeOutLightbox)
+  },
+
+  showBeatForm: function() {
+    $('.beat_button').click(BadBeats.View.toggleBeatForm);
   }
 }
