@@ -1,0 +1,16 @@
+body {
+  font-family: "Geneva";
+  font-size: 1.1em;
+}
+
+.small-pad {
+  padding: 1vh 4vh;
+}
+
+.bord-box {
+  box-sizing: border-box;
+}
+
+.big-radius {
+  border-radius: 30px;
+}

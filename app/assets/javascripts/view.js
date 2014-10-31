@@ -4,6 +4,6 @@ BadBeats.View = {
   },
 
   toggleComments: function(element) {
-    $(element).siblings('.comments_container').slideToggle(500);
+    $(element).parents('.beat_content').siblings('.comments_container').slideToggle(500);
   }
 };
