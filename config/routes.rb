@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   resources :beats, only: [:index, :create, :destroy, :update] do
     resources :comments, only: [:create]
   end
+
+  get "/login" => "sessions#new"
+  post "/login" => "sessions#create"
+  get "/logout" => "sessions#destroy"
 end

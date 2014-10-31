@@ -1,0 +1,14 @@
+<section class="signup_lightbox">
+  <h2 class="form_header">Sign Up</h2>
+
+  <%= form_for User.new, html: {class: "form"} do |f| %>
+    <%= f.text_field :name, class: "form_field", placeholder: "Full Name" %>
+
+    <%= f.text_field :email, class: "form_field", placeholder: "Email" %>
+
+    <%= f.password_field :password, class: "form_field", placeholder: "Password" %>
+
+    <%= f.submit "Sign Up", class: "form_button" %>
+  <%end%>
+
+</section>
