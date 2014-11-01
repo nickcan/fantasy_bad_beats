@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :beats, only: :index
   end
 
-  resources :beats, only: [:index, :create, :destroy, :update] do
+  resources :beats, only: [:index, :create, :destroy, :edit, :update] do
     resources :comments, only: [:create]
   end
 

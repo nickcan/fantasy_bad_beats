@@ -12,6 +12,21 @@ class BeatsController < ApplicationController
     end
   end
 
+  def edit
+    @beat = Beat.find(params[:id])
+  end
+
+  def update
+    beat = Beat.find(params[:id])
+    beat.update_attributes(beat_params)
+    redirect_to beat.user
+  end
+
+  def destroy
+    Beat.find(params[:id]).destroy
+    redirect_to user
+  end
+
   private
 
   def beat_params
