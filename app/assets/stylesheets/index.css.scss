@@ -4,10 +4,10 @@ $beat_button: #009b50;
 
 .beats_container {
   width: 70%;
-  margin: 12vh auto;
+  margin: 9vh auto;
 
   .beat_button {
-    margin-bottom: 5vh;
+    margin-bottom: 2vh;
     padding: 2vh 4%;
     font-weight: bold;
     background: $beat_button;
@@ -24,7 +24,7 @@ $beat_button: #009b50;
 
   .beat {
     background: $dark_back;
-    margin-bottom: 5vh;
+    margin-bottom: 2vh;
 
     .beat_content {
       background: $light_back;
@@ -76,7 +76,7 @@ $beat_button: #009b50;
 
 .new_beat_form {
   width: 100%;
-  margin-bottom: 5vh;
+  margin-bottom: 2vh;
 
   .text_area {
     width: 99.4%;
