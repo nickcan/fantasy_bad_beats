@@ -8,6 +8,7 @@ class BeatsController < ApplicationController
       beat = current_user.beats.create(beat_params)
       redirect_to root_path
     else
+      Beat.create(beat_params)
       redirect_to root_path
     end
   end
