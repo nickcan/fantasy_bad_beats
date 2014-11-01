@@ -20,3 +20,12 @@ body {
   display: table;
   clear: both;
 }
+
+.small-link {
+  color: blue;
+  text-decoration: none;
+}
+
+.small-link:hover {
+  text-decoration: underline;
+}

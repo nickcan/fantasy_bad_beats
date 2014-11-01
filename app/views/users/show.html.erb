@@ -9,8 +9,8 @@
           <h3 class="beat-content"><%= beat.content %></h3>
           <p class="timestamps">Posted: <%= beat.created_at.strftime("%d %b, %Y") %></p>
           <% if current_user != nil && current_user.id == beat.user.id %>
-            <%= link_to "Edit", edit_beat_path(beat) %>
-            <%= link_to "Delete", beat_path(beat), method: :delete %>
+            <%= link_to "Edit", edit_beat_path(beat), class: 'small-link' %>
+            <%= link_to "Delete", beat_path(beat), method: :delete, class: 'small-link' %>
           <% end %>
           <hr>
         </section>
