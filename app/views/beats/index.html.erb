@@ -25,6 +25,9 @@
       <% beat.comments.each do |comment| %>
       <article class="comment small-pad bord-box">
         <h3><%= link_to comment.user.name + ":", user_path(comment.user), class: "user_link" %> <%= comment.content %></h3>
+        <% if current_user != nil && current_user.id == comment.user.id %>
+          <%= link_to "Delete", beat_comment_path(beat, comment), method: :delete, class: 'small-link' %>
+        <% end %>
       </article>
       <% end %>
     </div>

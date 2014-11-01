@@ -22,6 +22,9 @@
         <section class="acc-content">
           <h3 class="comment-content"><%= comment.content %></h3>
           <p class="timestamps">Posted: <%= comment.created_at.strftime("%d %b, %Y") %></p>
+          <% if current_user != nil && current_user.id == comment.user.id %>
+            <%= link_to "Delete", beat_comment_path(beat, comment), method: :delete, class: 'small-link' %>
+          <% end %>
           <hr>
         </section>
       <% end %>
