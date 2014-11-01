@@ -1,10 +1,55 @@
 $light_back: #dadbdd;
 $dark_back: #424242;
 
-.user_container {
+.user-container {
   position: relative;
   top: 12vh;
   width: 70%;
   margin: 0 auto;
+  margin-bottom: 5vh;
   background: $light_back;
+  border-radius: 8px;
+  max-height: 83vh;
+  overflow: hidden;
+
+  .profile-pic {
+    float: left;
+    width: 33%;
+    height: 33vh;
+    background: $dark_back;
+    margin: 3vh 0;
+    border-radius: 8px;
+  }
+
+  .about {
+    float: right;
+    width: 63%;
+    height: 33vh;
+    margin: 3vh 0;
+    border-radius: 8px;
+    background: white;
+  }
+
+  #accordion {
+    width: 100%;
+    clear: both;
+
+    .acc-title {
+      background: $dark_back;
+      color: white;
+      padding: 1vh 2%;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .acc-container {
+      max-height: 26vh;
+      overflow: scroll;
+      padding: 0 2%;
+
+      .timestamps {
+        font-size: .75em;
+      }
+    }
+  }
 }
