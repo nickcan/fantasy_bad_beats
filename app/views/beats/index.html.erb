@@ -22,6 +22,9 @@
       <% end %>
     </article>
     <div class="comments_container">
+      <%= form_for [beat, Comment.new], html: {class: "comment_form"} do |f| %>
+        <%= f.text_field :content, placeholder: "Enter Comment", class: "text_field", required: true %>
+      <% end %>
       <% beat.comments.each do |comment| %>
       <article class="comment small-pad bord-box">
         <h3><%= link_to comment.user.name + ":", user_path(comment.user), class: "user_link" %> <%= comment.content %></h3>
