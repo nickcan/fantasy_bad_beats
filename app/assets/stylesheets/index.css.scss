@@ -66,6 +66,13 @@ $beat_button: #009b50;
       width: 90%;
       background: $light_back;
       margin: 3vh auto;
+      font-size: .8em;
     }
+  }
+
+  .user_link {
+    font-size: .9em;
+    color: blue;
+    text-decoration: none;
   }
 }

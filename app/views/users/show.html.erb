@@ -1,0 +1,26 @@
+<main class="user-container small-pad bord-box clearfix">
+  <div class="profile-pic"></div>
+  <aside class="about"></aside>
+  <div id="accordion">
+    <h3 class="acc-title">You have <%= @user.beats.count %> BadBeats</h3>
+    <div class="acc-container">
+      <% @user.beats.each do |beat| %>
+        <section class="acc-content">
+          <h3><%= beat.content %></h3>
+          <p class="timestamps">Posted: <%= beat.created_at.strftime("%d %b, %Y") %></p>
+          <hr>
+        </section>
+      <% end %>
+    </div>
+    <h3 class="acc-title">You have <%= @user.comments.count %> comments</h3>
+    <div class="acc-container">
+      <% @user.comments.each do |comment| %>
+        <section class="acc-content">
+          <h3><%= comment.content %></h3>
+          <p class="timestamps">Posted: <%= comment.created_at.strftime("%d %b, %Y") %></p>
+          <hr>
+        </section>
+      <% end %>
+    </div>
+  </div>
+</main>
