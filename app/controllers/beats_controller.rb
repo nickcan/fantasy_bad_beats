@@ -22,6 +22,11 @@ class BeatsController < ApplicationController
     redirect_to beat.user
   end
 
+  def destroy
+    Beat.find(params[:id]).destroy
+    redirect_to user
+  end
+
   private
 
   def beat_params
