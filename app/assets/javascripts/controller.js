@@ -7,6 +7,7 @@ BadBeats.Controller.prototype = {
     this.showSignupLightbox();
     this.hideLightbox();
     this.showBeatForm();
+    this.upvote();
   },
 
   listenForComments: function() {
@@ -29,5 +30,17 @@ BadBeats.Controller.prototype = {
 
   showBeatForm: function() {
     $('.beat_button').click(BadBeats.View.toggleBeatForm);
+  },
+
+  upvote: function() {
+    $('.upvote').click(function(event) {
+      event.preventDefault();
+      $.ajax({
+        url: $(this).attr('href'),
+        type: 'GET'
+      }).done(function(data) {
+        console.log(data);
+      })
+    })
   }
 }

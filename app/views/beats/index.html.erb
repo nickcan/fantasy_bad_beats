@@ -8,7 +8,6 @@
     <%= f.submit "Submit BadBeat", class: "submit_button" %>
   <% end %>
 
-
   <% @beats.each do |beat| %>
   <section class="beat small-radius">
     <%= render partial: 'partials/beats', locals: {beat: beat} %>
