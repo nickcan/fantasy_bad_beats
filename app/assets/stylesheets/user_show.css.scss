@@ -8,7 +8,7 @@ $dark_back: #424242;
   margin: 0 auto;
   margin-bottom: 5vh;
   background: $light_back;
-  border-radius: 8px;
+  border-radius: 5px;
   max-height: 83vh;
   overflow: hidden;
 
@@ -18,7 +18,7 @@ $dark_back: #424242;
     height: 33vh;
     background: $dark_back;
     margin: 3vh 0;
-    border-radius: 8px;
+    border-radius: 5px;
   }
 
   .about {
@@ -26,7 +26,7 @@ $dark_back: #424242;
     width: 63%;
     height: 33vh;
     margin: 3vh 0;
-    border-radius: 8px;
+    border-radius: 5px;
     background: white;
   }
 
@@ -39,13 +39,15 @@ $dark_back: #424242;
       color: white;
       padding: 1vh 2%;
       cursor: pointer;
-      border-radius: 8px;
+      border-radius: 5px;
     }
 
     .acc-container {
-      max-height: 26vh;
+      max-height: 28vh;
       overflow: scroll;
       padding: 0 2%;
+      background: white;
+      border-radius: 5px;
 
       .timestamps {
         font-size: .75em;

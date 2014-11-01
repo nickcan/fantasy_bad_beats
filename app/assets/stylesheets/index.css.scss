@@ -1,13 +1,13 @@
-$light_back: #dadbdd;
+$light_back: white;
 $dark_back: #424242;
 $beat_button: #009b50;
 
 .beats_container {
   width: 70%;
-  margin: 12vh auto;
+  margin: 9vh auto;
 
   .beat_button {
-    margin-bottom: 5vh;
+    margin-bottom: 2vh;
     padding: 2vh 4%;
     font-weight: bold;
     background: $beat_button;
@@ -15,16 +15,25 @@ $beat_button: #009b50;
     border-radius: 5px;
     color: white;
     outline: none;
+    transition: border-radius, .8s;
+  }
+
+  .beat_button:hover {
+    border-radius: 30px;
   }
 
   .beat {
     background: $dark_back;
-    margin-bottom: 5vh;
+    margin-bottom: 2vh;
 
     .beat_content {
       background: $light_back;
       min-height: 21vh;
       width: 100%;
+    }
+
+    .comments_container {
+      padding: .5vh 0 .5vh 0;
     }
 
     .comments_button {
@@ -40,18 +49,21 @@ $beat_button: #009b50;
       box-shadow: 0 0 5px 2px black;
       outline: none;
       cursor: pointer;
-      transition: background, color, box-shadow, .5s;
+      transition: background, color, box-shadow, .5s, border-radius, .8s;
     }
 
     .comments_button:hover {
       box-shadow: 2px 2px 7px 2px black;
+      border-radius: 30px;
     }
 
     .comment {
-      width: 90%;
+      width: 97%;
       background: $light_back;
-      margin: 3vh auto;
+      margin: 2vh auto;
       font-size: .8em;
+      border-radius: 4px;
+      transition: border-radius, .8s;
     }
   }
 
@@ -64,7 +76,7 @@ $beat_button: #009b50;
 
 .new_beat_form {
   width: 100%;
-  margin-bottom: 5vh;
+  margin-bottom: 2vh;
 
   .text_area {
     width: 99.4%;

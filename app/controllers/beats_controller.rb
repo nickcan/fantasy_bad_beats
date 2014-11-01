@@ -19,12 +19,12 @@ class BeatsController < ApplicationController
   def update
     beat = Beat.find(params[:id])
     beat.update_attributes(beat_params)
-    redirect_to beat.user
+    redirect_to current_user
   end
 
   def destroy
     Beat.find(params[:id]).destroy
-    redirect_to user
+    redirect_to current_user
   end
 
   private
