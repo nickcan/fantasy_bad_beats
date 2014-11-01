@@ -28,6 +28,12 @@ class BeatsController < ApplicationController
     redirect_to current_user
   end
 
+  def upvote
+    vote = Beat.find(params[:id]).votes.create()
+    current_user.votes << vote
+    render nothing: true
+  end
+
   private
 
   def beat_params
