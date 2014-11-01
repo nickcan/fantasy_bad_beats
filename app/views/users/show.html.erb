@@ -6,8 +6,9 @@
     <div class="acc-container">
       <% @user.beats.each do |beat| %>
         <section class="acc-content">
-          <h3><%= beat.content %></h3>
+          <h3 class="beat-content"><%= beat.content %></h3>
           <p class="timestamps">Posted: <%= beat.created_at.strftime("%d %b, %Y") %></p>
+          <%= link_to "Edit", edit_beat_path(beat) %>
           <hr>
         </section>
       <% end %>
@@ -16,7 +17,7 @@
     <div class="acc-container">
       <% @user.comments.each do |comment| %>
         <section class="acc-content">
-          <h3><%= comment.content %></h3>
+          <h3 class="comment-content"><%= comment.content %></h3>
           <p class="timestamps">Posted: <%= comment.created_at.strftime("%d %b, %Y") %></p>
           <hr>
         </section>

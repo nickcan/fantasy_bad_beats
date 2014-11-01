@@ -1,0 +1,5 @@
+<%= form_for @beat, html: {class: "new_beat_form beat_form"} do |f| %>
+  <%= f.label "Enter your BadBeat!", class: "form_title" %>
+  <%= f.text_area :content, placeholder: "Maximum 300 Characters", class: "text_area", required: true %>
+  <%= f.submit "Submit BadBeat", class: "submit_button" %>
+<% end %>
