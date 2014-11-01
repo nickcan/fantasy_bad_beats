@@ -1,6 +1,7 @@
 body {
   font-family: "Geneva";
   font-size: 1.1em;
+  background: #dadbdd;
 }
 
 .small-pad {
@@ -13,6 +14,10 @@ body {
 
 .big-radius {
   border-radius: 30px;
+}
+
+.small-radius {
+  border-radius: 5px;
 }
 
 .clearfix:after {

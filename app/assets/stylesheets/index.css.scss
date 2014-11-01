@@ -1,4 +1,4 @@
-$light_back: #dadbdd;
+$light_back: white;
 $dark_back: #424242;
 $beat_button: #009b50;
 
@@ -15,6 +15,11 @@ $beat_button: #009b50;
     border-radius: 5px;
     color: white;
     outline: none;
+    transition: border-radius, .8s;
+  }
+
+  .beat_button:hover {
+    border-radius: 30px;
   }
 
   .beat {
@@ -25,6 +30,10 @@ $beat_button: #009b50;
       background: $light_back;
       min-height: 21vh;
       width: 100%;
+    }
+
+    .comments_container {
+      padding: .5vh 0 .5vh 0;
     }
 
     .comments_button {
@@ -40,18 +49,21 @@ $beat_button: #009b50;
       box-shadow: 0 0 5px 2px black;
       outline: none;
       cursor: pointer;
-      transition: background, color, box-shadow, .5s;
+      transition: background, color, box-shadow, .5s, border-radius, .8s;
     }
 
     .comments_button:hover {
       box-shadow: 2px 2px 7px 2px black;
+      border-radius: 30px;
     }
 
     .comment {
-      width: 90%;
+      width: 97%;
       background: $light_back;
-      margin: 3vh auto;
+      margin: 2vh auto;
       font-size: .8em;
+      border-radius: 4px;
+      transition: border-radius, .8s;
     }
   }
 
