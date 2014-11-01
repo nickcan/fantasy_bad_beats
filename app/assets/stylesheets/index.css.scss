@@ -83,6 +83,10 @@ $beat_button: #009b50;
     height: 20vh;
   }
 
+  .text_area:focus:valid {
+    outline-color: green;
+  }
+
   .submit_button {
     width: 100%;
     padding: 2vh 0;
@@ -90,11 +94,19 @@ $beat_button: #009b50;
 }
 
 .comment_form {
-  width: 96%;
+  width: 97%;
   margin: 1vh auto;
 
   .text_field {
     width: 100%;
-    padding: 1vh 0;
+    padding: 1vh 1%;
+    border-radius: 5px;
+    border: none;
+    box-sizing: border-box;
+    transition: outline-color, .3s;
+  }
+
+  .text_field:focus:valid {
+    outline-color: green;
   }
 }
