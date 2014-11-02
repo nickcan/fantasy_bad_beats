@@ -4,11 +4,11 @@
 
   <%= render partial: 'partials/posted_by', locals: {beat: beat} %>
 
-  <p class="created_at">Created: <%= beat.created_at.strftime("%d %b, %Y") %></p>
   <% if current_user != nil && beat.user != nil && current_user.id == beat.user.id %>
     <%= link_to "Edit", edit_beat_path(beat), class: 'small-link' %>
     <%= link_to "Delete", beat_path(beat), method: :delete, class: 'small-link' %>
   <% end %>
+
   <p class="vote_count">Votes: <%= beat.votes.count %></p>
   <% if current_user != nil && !current_user.voted?(beat) %>
     <%= link_to "Upvote", "/beats/#{beat.id}/upvote", class: 'small-link upvote' %>
