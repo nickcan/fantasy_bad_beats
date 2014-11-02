@@ -13,5 +13,5 @@ Rails.application.routes.draw do
 
   get "/beats/:id/upvote" => "beats#upvote"
   get "/comments/:id/upvote" => "comments#upvote"
-  get "votes/:id" => "votes#destroy"
+  delete "votes/:id" => "votes#destroy"
 end

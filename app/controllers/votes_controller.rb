@@ -1,8 +1,8 @@
 class VotesController < ApplicationController
   def destroy
     vote = Vote.find(params[:id]).destroy
-    beat = Beat.find(vote.voteable_id)
-    beat.update_count
-    render json: {vote: vote, obj: beat}.to_json
+    object = vote.voteable_type.constantize.find(vote.voteable_id)
+    object.update_count
+    render json: {vote: vote, obj: object}.to_json
   end
 end

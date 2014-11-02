@@ -7,7 +7,8 @@ BadBeats.Controller.prototype = {
     this.showSignupLightbox();
     this.hideLightbox();
     this.showBeatForm();
-    this.upvote();
+    this.upvoteBeat();
+    this.upvoteComment();
     this.downvote();
   },
 
@@ -33,8 +34,21 @@ BadBeats.Controller.prototype = {
     $('.beat_button').click(BadBeats.View.toggleBeatForm);
   },
 
-  upvote: function() {
-    $('.beat').on('click', '.upvote', function(event) {
+  upvoteBeat: function() {
+    $('.beat').on('click', '.upvote_beat', function(event) {
+      event.preventDefault();
+      var button = $(this)
+      $.ajax({
+        url: $(this).attr('href'),
+        type: 'GET'
+      }).done(function(data) {
+        BadBeats.View.switchToDownvote(button, data.vote.id, data.obj.vote_count)
+      })
+    })
+  },
+
+  upvoteComment: function() {
+    $('.beat').on('click', '.upvote_comment', function(event) {
       event.preventDefault();
       var button = $(this)
       $.ajax({
@@ -47,15 +61,24 @@ BadBeats.Controller.prototype = {
   },
 
   downvote: function() {
+    var self = this;
     $('.beat').on('click', '.downvote', function(event) {
       event.preventDefault();
       var button = $(this)
       $.ajax({
         url: $(this).attr('href'),
-        type: 'GET'
+        type: 'DELETE'
       }).done(function(data) {
-        BadBeats.View.switchToUpvote(button, data.vote.voteable_id, data.obj.vote_count)
+        self.downvoteDone(data, button);
       })
     })
+  },
+
+  downvoteDone: function(data, button) {
+    if (data.vote.voteable_type == "Beat") {
+      BadBeats.View.switchToUpvoteBeat(button, data.vote.voteable_id, data.obj.vote_count)
+    } else {
+      BadBeats.View.switchToUpvoteComment(button, data.vote.voteable_id, data.obj.vote_count)
+    }
   }
 }
