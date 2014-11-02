@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'beats#index'
+  root "beats#index"
 
   resources :users, only: [:show, :create, :update, :destroy]
 
@@ -10,4 +10,8 @@ Rails.application.routes.draw do
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"
   get "/signout" => "sessions#destroy"
+
+  get "/beats/:id/upvote" => "beats#upvote"
+  get "/comments/:id/upvote" => "comments#upvote"
+  get "votes/:id" => "votes#destroy"
 end

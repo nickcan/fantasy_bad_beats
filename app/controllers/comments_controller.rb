@@ -10,6 +10,12 @@ class CommentsController < ApplicationController
     redirect_to root_path
   end
 
+  def upvote
+    vote = Comment.find(params[:id]).votes.create()
+    current_user.votes << vote
+    render nothing: true
+  end
+
   private
 
   def comment_params

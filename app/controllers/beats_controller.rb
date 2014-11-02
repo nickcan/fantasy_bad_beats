@@ -1,6 +1,10 @@
 class BeatsController < ApplicationController
   def index
-    @beats = Beat.all.order(created_at: :desc)
+    if params[:order] == "most_votes"
+      @beats = Beat.all.order(vote_count: :asc)
+    else
+      @beats = Beat.all.order(created_at: :desc)
+    end
   end
 
   def create
@@ -26,6 +30,14 @@ class BeatsController < ApplicationController
   def destroy
     Beat.find(params[:id]).destroy
     redirect_to current_user
+  end
+
+  def upvote
+    beat = Beat.find(params[:id])
+    vote = beat.votes.create()
+    current_user.votes << vote
+    beat.update_count
+    render json: {vote: vote, obj: beat}.to_json
   end
 
   private
