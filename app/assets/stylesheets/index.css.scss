@@ -33,6 +33,7 @@ $beat_button: #009b50;
     }
 
     .comments_container {
+      display: none;
       padding: .5vh 0 .5vh 0;
     }
 
@@ -71,42 +72,5 @@ $beat_button: #009b50;
     font-size: .9em;
     color: blue;
     text-decoration: none;
-  }
-}
-
-.new_beat_form {
-  width: 100%;
-  margin-bottom: 2vh;
-
-  .text_area {
-    width: 99.4%;
-    height: 20vh;
-  }
-
-  .text_area:focus:valid {
-    outline-color: green;
-  }
-
-  .submit_button {
-    width: 100%;
-    padding: 2vh 0;
-  }
-}
-
-.comment_form {
-  width: 97%;
-  margin: 1vh auto;
-
-  .text_field {
-    width: 100%;
-    padding: 1vh 1%;
-    border-radius: 5px;
-    border: none;
-    box-sizing: border-box;
-    transition: outline-color, .3s;
-  }
-
-  .text_field:focus:valid {
-    outline-color: green;
   }
 }
