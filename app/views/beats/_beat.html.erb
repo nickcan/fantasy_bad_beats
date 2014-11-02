@@ -1,13 +1,13 @@
 <article class="beat_content small-pad bord-box small-radius clearfix">
-  <h2><%= beat.content %></h2>
+  <h2><%= beat.content %>
+  <span class="beat_span"><% if current_user != nil && beat.user != nil && current_user.id == beat.user.id %>
+    <%= link_to "Edit", edit_beat_path(beat), class: 'small-link' %> |
+    <%= link_to "Delete", beat_path(beat), method: :delete, class: 'small-link' %>
+  <% end %></span></h2>
   <button class="comments_button">Comments<br><%= beat.comments.count %></button>
+  <%= render partial: 'votes', locals: {beat: beat} %>
 
   <%= render partial: 'posted_by', locals: {beat: beat} %>
 
-  <% if current_user != nil && beat.user != nil && current_user.id == beat.user.id %>
-    <%= link_to "Edit", edit_beat_path(beat), class: 'small-link' %>
-    <%= link_to "Delete", beat_path(beat), method: :delete, class: 'small-link' %>
-  <% end %>
 
-  <%= render partial: 'votes', locals: {beat: beat} %>
 </article>

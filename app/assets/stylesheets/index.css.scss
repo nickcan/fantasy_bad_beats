@@ -34,6 +34,10 @@ $beat_button: #009b50;
       width: 100%;
     }
 
+    .beat_span {
+      font-size: .65em;
+    }
+
     .comments_container {
       display: none;
       padding: .5vh 0 .5vh 0;
@@ -43,7 +47,6 @@ $beat_button: #009b50;
       position: relative;
       float: right;
       padding: 1vh 4%;
-      top: 1vh;
       font-size: 2vh;
       background: #444444;
       color: white;
@@ -93,4 +96,32 @@ $beat_button: #009b50;
 
 .filters:hover {
   border-radius: 30px;
+}
+
+.beat_vote_container {
+  position: relative;
+  float: right;
+  width: 10%;
+  text-align: center;
+  margin-right: 3%;
+  width: 20%;
+  top: 5vh;
+}
+
+.vote_link {
+  display: inline;
+}
+
+.vote_count {
+  display: inline;
+}
+
+.comment_vote_container {
+  position: relative;
+  width: 20%;
+}
+
+.comment_span {
+  font-size: .8em;
+  margin-left: 2%;
 }
