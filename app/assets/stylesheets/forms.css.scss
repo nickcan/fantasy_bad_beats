@@ -1,5 +1,4 @@
-.new_beat_form {
-  display: none;
+.beat_form {
   width: 100%;
   margin-bottom: 2vh;
 
@@ -34,4 +33,8 @@
   .text_field:focus:valid {
     outline-color: green;
   }
+}
+
+.new_beat_form {
+  display: none;
 }

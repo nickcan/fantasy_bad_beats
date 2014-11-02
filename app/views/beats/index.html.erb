@@ -2,7 +2,7 @@
   <div class="filter_bar">
     <button class="beat_button">Create New BadBeat</button>
   </div>
-  <%= form_for Beat.new, html: {class: "new_beat_form"} do |f| %>
+  <%= form_for Beat.new, html: {class: "new_beat_form beat_form"} do |f| %>
     <%= f.label "Enter your BadBeat!", class: "form_title" %>
     <%= f.text_area :content, placeholder: "Maximum 300 Characters", class: "text_area", required: true %>
     <%= f.submit "Submit BadBeat", class: "submit_button" %>
