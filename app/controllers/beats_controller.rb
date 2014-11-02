@@ -1,6 +1,10 @@
 class BeatsController < ApplicationController
   def index
-    @beats = Beat.all.order(created_at: :desc)
+    if params[:order] == "most_votes"
+      @beats = Beat.all.order(vote_count: :asc)
+    else
+      @beats = Beat.all.order(created_at: :desc)
+    end
   end
 
   def create
@@ -29,8 +33,10 @@ class BeatsController < ApplicationController
   end
 
   def upvote
-    vote = Beat.find(params[:id]).votes.create()
+    beat = Beat.find(params[:id])
+    vote = beat.votes.create()
     current_user.votes << vote
+    beat.update_attributes(vote_count: beat.votes.count)
     render nothing: true
   end
 

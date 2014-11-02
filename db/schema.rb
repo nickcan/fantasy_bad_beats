@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20141101201145) do
 
   create_table "beats", force: true do |t|
     t.text     "content"
+    t.integer  "vote_count"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -25,6 +26,7 @@ ActiveRecord::Schema.define(version: 20141101201145) do
 
   create_table "comments", force: true do |t|
     t.text     "content"
+    t.integer  "vote_count"
     t.integer  "user_id"
     t.integer  "beat_id"
     t.datetime "created_at"

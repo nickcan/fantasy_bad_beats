@@ -8,6 +8,9 @@
     <%= f.submit "Submit BadBeat", class: "submit_button" %>
   <% end %>
 
+  <%= link_to "Newest", {controller: "beats", action: "index", :order => "new"} %> |
+  <%= link_to "Most Votes", {controller: "beats", action: "index", :order => "most_votes"} %>
+
   <% @beats.each do |beat| %>
   <section class="beat small-radius">
     <%= render partial: 'partials/beats', locals: {beat: beat} %>
