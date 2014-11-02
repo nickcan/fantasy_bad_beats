@@ -8,9 +8,6 @@
   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 </head>
 <body>
-  <div class="background"></div>
-  <%= render partial: 'layouts/login' %>
-  <%= render partial: 'layouts/signup' %>
 
   <header class="app-header clearfix bord-box">
     <h2 class="header-title"><%= link_to "Fantasy Bad Beats", root_path, class: "title-link" %></h2>
@@ -26,5 +23,8 @@
 
 <%= yield %>
 
+  <div class="background"></div>
+  <%= render partial: 'layouts/login' %>
+  <%= render partial: 'layouts/signup' %>
 </body>
 </html>

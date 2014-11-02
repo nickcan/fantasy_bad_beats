@@ -1,22 +1,13 @@
 <article class="beat_content small-pad bord-box small-radius clearfix">
   <h2><%= beat.content %></h2>
   <button class="comments_button">Comments<br><%= beat.comments.count %></button>
-  <% if beat.user == nil %>
-    <p class="post_by">Posted by: Anonymous</p>
-  <% else %>
-    <p class="post_by">Posted by: <%= link_to beat.user.name, user_path(beat.user), class: "user_link" %></p>
-  <% end %>
-  <p class="created_at">Created: <%= beat.created_at.strftime("%d %b, %Y") %></p>
+
+  <%= render partial: 'partials/posted_by', locals: {beat: beat} %>
+
   <% if current_user != nil && beat.user != nil && current_user.id == beat.user.id %>
     <%= link_to "Edit", edit_beat_path(beat), class: 'small-link' %>
     <%= link_to "Delete", beat_path(beat), method: :delete, class: 'small-link' %>
   <% end %>
-  <p class="vote_count">Votes: <%= beat.votes.count %></p>
-  <% if current_user != nil && !current_user.voted?(beat) %>
-    <%= link_to "Upvote", "/beats/#{beat.id}/upvote", class: 'small-link upvote' %>
-  <% elsif current_user != nil && current_user.voted?(beat) %>
-    <%= link_to "Downvote", "/votes/#{current_user.get_vote(beat).id}", class: 'small-link downvote' %>
-  <% else %>
-    <p>You must be signed in to vote</p>
-  <% end %>
+
+  <%= render partial: 'partials/beat_commands', locals: {beat: beat} %>
 </article>
