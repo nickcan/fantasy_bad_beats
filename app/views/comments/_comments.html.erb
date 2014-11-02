@@ -1,0 +1,10 @@
+<div class="comments_container">
+  <%= form_for [beat, Comment.new], html: {class: "comment_form"} do |f| %>
+    <%= f.text_field :content, placeholder: "Enter Comment", class: "text_field", required: true %>
+  <% end %>
+  <% beat.comments.each do |comment| %>
+
+    <%= render partial: 'comments/comment', locals: {beat: beat, comment: comment} %>
+
+  <% end %>
+</div>

@@ -1,0 +1,8 @@
+<p class="vote_count">Votes: <%= comment.votes.count %></p>
+<% if current_user != nil && !current_user.voted?(comment) %>
+  <%= link_to "Upvote", "/comments/#{comment.id}/upvote", class: 'small-link upvote' %>
+<% elsif current_user != nil && current_user.voted?(comment) %>
+  <%= link_to "Downvote", "/votes/#{current_user.get_vote(comment).id}", class: 'small-link downvote' %>
+<% else %>
+  <p>You must be signed in to vote</p>
+<% end %>

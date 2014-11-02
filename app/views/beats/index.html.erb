@@ -13,8 +13,8 @@
 
   <% @beats.each do |beat| %>
   <section class="beat small-radius">
-    <%= render partial: 'partials/beats', locals: {beat: beat} %>
-    <%= render partial: 'partials/comments', locals: {beat: beat} %>
+    <%= render partial: 'beat', locals: {beat: beat} %>
+    <%= render partial: 'comments/comments', locals: {beat: beat} %>
   </section>
   <% end %>
 </div>
