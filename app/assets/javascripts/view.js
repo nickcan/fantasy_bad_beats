@@ -20,8 +20,13 @@ BadBeats.View = {
     $(element).replaceWith("<a class='small-link downvote' href='/votes/" + id + "'>Downvote</a>")
   },
 
-  switchToUpvote: function(element, id, voteCount) {
+  switchToUpvoteBeat: function(element, id, voteCount) {
     $(element).siblings('.vote_count').text("Votes: " + voteCount)
-    $(element).replaceWith("<a class='small-link upvote' href='/beats/" + id + "/upvote'>Upvote</a>")
+    $(element).replaceWith("<a class='small-link upvote_beat' href='/beats/" + id + "/upvote'>Upvote</a>")
+  },
+
+  switchToUpvoteComment: function(element, id, voteCount) {
+    $(element).siblings('.vote_count').text("Votes: " + voteCount)
+    $(element).replaceWith("<a class='small-link upvote_comment' href='/comments/" + id + "/upvote'>Upvote</a>")
   }
 };

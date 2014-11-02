@@ -1,6 +1,6 @@
 <p class="vote_count">Votes: <%= beat.votes.count %></p>
 <% if current_user != nil && !current_user.voted?(beat) %>
-  <%= link_to "Upvote", "/beats/#{beat.id}/upvote", class: 'small-link upvote' %>
+  <%= link_to "Upvote", "/beats/#{beat.id}/upvote", class: 'small-link upvote_beat' %>
 <% elsif current_user != nil && current_user.voted?(beat) %>
   <%= link_to "Downvote", "/votes/#{current_user.get_vote(beat).id}", class: 'small-link downvote' %>
 <% else %>
