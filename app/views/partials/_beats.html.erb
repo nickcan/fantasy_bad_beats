@@ -9,12 +9,5 @@
     <%= link_to "Delete", beat_path(beat), method: :delete, class: 'small-link' %>
   <% end %>
 
-  <p class="vote_count">Votes: <%= beat.votes.count %></p>
-  <% if current_user != nil && !current_user.voted?(beat) %>
-    <%= link_to "Upvote", "/beats/#{beat.id}/upvote", class: 'small-link upvote' %>
-  <% elsif current_user != nil && current_user.voted?(beat) %>
-    <%= link_to "Downvote", "/votes/#{current_user.get_vote(beat).id}", class: 'small-link downvote' %>
-  <% else %>
-    <p>You must be signed in to vote</p>
-  <% end %>
+  <%= render partial: 'partials/beat_commands', locals: {beat: beat} %>
 </article>
