@@ -1,9 +1,9 @@
 class BeatsController < ApplicationController
   def index
     if params[:order] == "most_votes"
-      @beats = Beat.all.order(vote_count: :asc)
+      @beats = Beat.most_votes
     else
-      @beats = Beat.all.order(created_at: :desc)
+      @beats = Beat.most_recent
     end
   end
 

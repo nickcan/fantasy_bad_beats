@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20141101201145) do
 
   create_table "beats", force: true do |t|
     t.text     "content"
-    t.integer  "vote_count"
+    t.integer  "vote_count", default: 0
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
