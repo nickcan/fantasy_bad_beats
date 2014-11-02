@@ -1,6 +1,8 @@
 <div class="beats_container">
   <div class="filter_bar">
     <button class="beat_button">Create New BadBeat</button>
+  <%= link_to "Newest", {controller: "beats", action: "index", :order => "new"}, class: "filters" %>
+  <%= link_to "Most Votes", {controller: "beats", action: "index", :order => "most_votes"}, class: "filters" %>
   </div>
   <%= form_for Beat.new, html: {class: "new_beat_form beat_form"} do |f| %>
     <%= f.label "Enter your BadBeat!", class: "form_title" %>
@@ -8,8 +10,6 @@
     <%= f.submit "Submit BadBeat", class: "submit_button" %>
   <% end %>
 
-  <%= link_to "Newest", {controller: "beats", action: "index", :order => "new"} %> |
-  <%= link_to "Most Votes", {controller: "beats", action: "index", :order => "most_votes"} %>
 
   <% @beats.each do |beat| %>
     <section class="beat small-radius">
