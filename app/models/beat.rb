@@ -4,7 +4,7 @@ class Beat < ActiveRecord::Base
   has_many :votes, as: :voteable
 
   scope :most_recent, -> {order(created_at: :desc)}
-  scope :most_votes, -> {order(vote_count: :asc)}
+  scope :most_votes, -> {order(vote_count: :desc)}
 
   def update_count
     self.update_attributes(vote_count: self.votes.count)
