@@ -36,8 +36,8 @@ class BeatsController < ApplicationController
     beat = Beat.find(params[:id])
     vote = beat.votes.create()
     current_user.votes << vote
-    beat.update_attributes(vote_count: beat.votes.count)
-    render nothing: true
+    beat.update_count
+    render json: {vote: vote, obj: beat}.to_json
   end
 
   private

@@ -11,11 +11,11 @@
     <%= link_to "Edit", edit_beat_path(beat), class: 'small-link' %>
     <%= link_to "Delete", beat_path(beat), method: :delete, class: 'small-link' %>
   <% end %>
-  <p>Votes: <%= beat.votes.count %></p>
+  <p class="vote_count">Votes: <%= beat.votes.count %></p>
   <% if current_user != nil && !current_user.voted?(beat) %>
-    <%= link_to "upvote", "/beats/#{beat.id}/upvote", class: 'small-link upvote' %>
+    <%= link_to "Upvote", "/beats/#{beat.id}/upvote", class: 'small-link upvote' %>
   <% elsif current_user != nil && current_user.voted?(beat) %>
-    <%= link_to "downvote", "/votes/#{current_user.get_vote(beat).id}", method: :delete %>
+    <%= link_to "Downvote", "/votes/#{current_user.get_vote(beat).id}", class: 'small-link downvote' %>
   <% else %>
     <p>You must be signed in to vote</p>
   <% end %>

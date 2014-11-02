@@ -8,6 +8,7 @@ BadBeats.Controller.prototype = {
     this.hideLightbox();
     this.showBeatForm();
     this.upvote();
+    this.downvote();
   },
 
   listenForComments: function() {
@@ -33,13 +34,27 @@ BadBeats.Controller.prototype = {
   },
 
   upvote: function() {
-    $('.upvote').click(function(event) {
+    $('.beat').on('click', '.upvote', function(event) {
       event.preventDefault();
+      var button = $(this)
       $.ajax({
         url: $(this).attr('href'),
         type: 'GET'
       }).done(function(data) {
-        console.log(data);
+        BadBeats.View.switchToDownvote(button, data.vote.id, data.obj.vote_count)
+      })
+    })
+  },
+
+  downvote: function() {
+    $('.beat').on('click', '.downvote', function(event) {
+      event.preventDefault();
+      var button = $(this)
+      $.ajax({
+        url: $(this).attr('href'),
+        type: 'GET'
+      }).done(function(data) {
+        BadBeats.View.switchToUpvote(button, data.vote.voteable_id, data.obj.vote_count)
       })
     })
   }

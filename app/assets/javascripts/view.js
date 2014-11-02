@@ -13,5 +13,15 @@ BadBeats.View = {
 
   toggleBeatForm: function() {
     $('#new_beat').slideToggle('slow')
+  },
+
+  switchToDownvote: function(element, id, voteCount) {
+    $(element).siblings('.vote_count').text("Votes: " + voteCount)
+    $(element).replaceWith("<a class='small-link downvote' href='/votes/" + id + "'>Downvote</a>")
+  },
+
+  switchToUpvote: function(element, id, voteCount) {
+    $(element).siblings('.vote_count').text("Votes: " + voteCount)
+    $(element).replaceWith("<a class='small-link upvote' href='/beats/" + id + "/upvote'>Upvote</a>")
   }
 };

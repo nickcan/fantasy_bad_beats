@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   get "/signout" => "sessions#destroy"
 
   get "/beats/:id/upvote" => "beats#upvote"
-  delete "votes/:id" => "votes#destroy"
   get "/comments/:id/upvote" => "comments#upvote"
+  get "votes/:id" => "votes#destroy"
 end
