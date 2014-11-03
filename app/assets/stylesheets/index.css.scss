@@ -30,7 +30,7 @@ $beat_button: #009b50;
 
     .beat_content {
       background: $light_back;
-      min-height: 21vh;
+      min-height: 18vh;
       width: 100%;
     }
 
@@ -45,8 +45,8 @@ $beat_button: #009b50;
 
     .comments_button {
       position: relative;
-      float: right;
-      padding: 1vh 4%;
+      float: left;
+      padding: 1vh 5%;
       font-size: 2vh;
       background: #444444;
       color: white;
@@ -100,27 +100,29 @@ $beat_button: #009b50;
 
 .beat_vote_container {
   position: relative;
-  float: right;
-  text-align: right;
-  margin-right: 3%;
-  width: 35%;
-  top: 5vh;
+  float: left;
+  margin-left: 3%;
+  top: 1vh;
 }
 
 .vote_link {
   display: inline;
 }
 
-.vote_count {
-  display: inline;
+.voted_fist {
+  box-shadow: 0 0 7px 5px blue;
+  border-radius: 100%;
 }
 
-.comment_vote_container {
-  position: relative;
-  width: 20%;
+.vote_count {
+  display: inline;
 }
 
 .comment_span {
   font-size: .8em;
   margin-left: 2%;
+}
+
+.post_by {
+  margin-top: -1em;
 }

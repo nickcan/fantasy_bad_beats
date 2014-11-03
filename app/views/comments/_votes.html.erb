@@ -1,10 +1,10 @@
 <div class="comment_vote_container">
   <% if current_user != nil && !current_user.voted?(comment) %>
-    <%= link_to "Upvote", "/comments/#{comment.id}/upvote", class: 'small-link upvote vote_link' %> |
+    <%= link_to image_tag('fist_small.png'), "/comments/#{comment.id}/upvote", class: 'small-link upvote vote_link vote_count' %>
   <% elsif current_user != nil && current_user.voted?(comment) %>
-    <%= link_to "Downvote", "/votes/#{current_user.get_vote(comment).id}", class: 'small-link downvote vote_link' %>
+    <%= link_to image_tag('fist_small.png', class: "voted_fist"), "/votes/#{current_user.get_vote(comment).id}", class: 'small-link downvote vote_link vote_count' %>
   <% else %>
-    <p>You must be signed in to vote</p>
+    <p>Login to vote</p>
   <% end %>
-  <p class="vote_count">Votes: <%= comment.votes.count %></p>
+  <p class="vote_count"><%= comment.votes.count %></p>
 </div>
