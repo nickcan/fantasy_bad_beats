@@ -1,0 +1,105 @@
+@media screen and (max-width: 1000px) {
+  main.user-container {
+    width: 90%;
+  }
+
+  .app-header {
+    .header-title {
+      margin: 3px 4.5%;
+      float: left;
+    }
+
+    .nav-container {
+      margin-right: 4.5%;
+      margin-top: 4px;
+
+      .nav-buttons {
+        font-size: .8em;
+      }
+    }
+  }
+
+  .beats_container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .beat_vote_container {
+    top: 0;
+    clear: left;
+  }
+
+  main.user-container {
+    width: 100%;
+  }
+
+  .login_lightbox, .signup_lightbox {
+    width: 80%;
+    margin: 10vh 10% 10%;
+  }
+
+  .form_field, .form_button {
+    width: 80%;
+    margin: 2vh auto;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .app-header {
+    .header-title {
+      margin: 3px 4.5%;
+      float: left;
+      text-align: left;
+      width: 40%;
+    }
+
+    .nav-container {
+      .nav-buttons {}
+    }
+  }
+
+  .beats_container {
+    margin: 4.75em auto;
+    width: 100%;
+
+    .beat {
+      width: 94%;
+      margin: 2vh auto;
+    }
+
+    .beat_button {
+      width: 100%;
+      border-radius: 0;
+      margin-bottom: 3px;
+    }
+
+    .beat_button:hover {
+      border-radius: 0;
+    }
+  }
+
+  .filters {
+    width: 100%;
+    clear: both;
+    margin-left: 0;
+    box-sizing: border-box;
+    top: 0;
+    border-radius: 0;
+    text-align: center;
+    margin-bottom: 3px;
+  }
+
+  .filters:last-child {
+    margin-bottom: 2vh;
+  }
+
+  .filters:hover {
+    border-radius: 0;
+  }
+
+  .beat_form {
+    width: 94%;
+    margin: 0 auto;
+  }
+}
