@@ -1,6 +1,5 @@
 <% if beat.user == nil %>
   <p class="post_by">Posted by: Anonymous</p>
 <% else %>
-  <p class="post_by">Posted by: <%= link_to beat.user.name, user_path(beat.user), class: "user_link" %></p>
+  <p class="post_by">Posted by: <%= link_to beat.user.name, user_path(beat.user), class: "user_link" %> | <%= beat.created_at.strftime("%d %b") %></p>
 <% end %>
-<p class="created_at">Created: <%= beat.created_at.strftime("%d %b, %Y") %></p>

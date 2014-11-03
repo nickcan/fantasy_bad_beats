@@ -4,10 +4,10 @@
     <%= link_to "Edit", edit_beat_path(beat), class: 'small-link' %> |
     <%= link_to "Delete", beat_path(beat), method: :delete, class: 'small-link' %>
   <% end %></span></h2>
-  <button class="comments_button">Comments<br><%= beat.comments.count %></button>
-  <%= render partial: 'votes', locals: {beat: beat} %>
 
   <%= render partial: 'posted_by', locals: {beat: beat} %>
+  <button class="comments_button">Comments: <%= beat.comments.count %></button>
+  <%= render partial: 'votes', locals: {beat: beat} %>
 
 
 </article>

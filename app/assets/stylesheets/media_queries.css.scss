@@ -25,11 +25,6 @@
 }
 
 @media screen and (max-width: 750px) {
-  .beat_vote_container {
-    top: 0;
-    clear: left;
-  }
-
   main.user-container {
     width: 100%;
   }
@@ -43,6 +38,10 @@
     width: 80%;
     margin: 2vh auto;
   }
+
+  .beat_vote_container {
+    float: right;
+  }
 }
 
 @media screen and (max-width: 530px) {
@@ -55,7 +54,9 @@
     }
 
     .nav-container {
-      .nav-buttons {}
+      .nav-buttons {
+
+      }
     }
   }
 
@@ -66,6 +67,12 @@
     .beat {
       width: 94%;
       margin: 2vh auto;
+
+      .comments_button {
+        width: 50%;
+        font-size: .8em;
+        box-shadow: 0 0 3px 1px black;
+      }
     }
 
     .beat_button {
@@ -101,5 +108,9 @@
   .beat_form {
     width: 94%;
     margin: 0 auto;
+  }
+
+  .post_by {
+    font-size: .8em;
   }
 }

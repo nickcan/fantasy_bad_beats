@@ -8,17 +8,17 @@ BadBeats.View = {
   },
 
   switchToDownvote: function(element, id, voteCount) {
-    $(element).siblings('.vote_count').text("Votes: " + voteCount)
-    $(element).replaceWith("<a class='small-link downvote' href='/votes/" + id + "'>Downvote</a>")
+    $(element).siblings('.vote_count').text(voteCount)
+    $(element).replaceWith("<a class='small-link downvote' href='/votes/" + id + "'><img class='voted_fist' src='/assets/fist_small.png'></a>")
   },
 
   switchToUpvoteBeat: function(element, id, voteCount) {
-    $(element).siblings('.vote_count').text("Votes: " + voteCount)
-    $(element).replaceWith("<a class='small-link upvote' href='/beats/" + id + "/upvote'>Upvote</a>")
+    $(element).siblings('.vote_count').text(voteCount)
+    $(element).replaceWith("<a class='small-link upvote vote_link' href='/beats/" + id + "/upvote'><img src='/assets/fist_small.png'></a>")
   },
 
   switchToUpvoteComment: function(element, id, voteCount) {
-    $(element).siblings('.vote_count').text("Votes: " + voteCount)
-    $(element).replaceWith("<a class='small-link upvote' href='/comments/" + id + "/upvote'>Upvote</a>")
+    $(element).siblings('.vote_count').text(voteCount)
+    $(element).replaceWith("<a class='small-link vote_link' href='/comments/" + id + "/upvote'>Upvote</a>")
   }
 };
