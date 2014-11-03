@@ -4,7 +4,7 @@
   <% elsif current_user != nil && current_user.voted?(beat) %>
     <%= link_to "Downvote", "/votes/#{current_user.get_vote(beat).id}", class: 'small-link downvote vote_link' %>
   <% else %>
-    <p>You must be signed in to vote</p>
+    <p class="vote_link">Login to vote</p>
   <% end %>
   | <p class="vote_count">Votes: <%= beat.votes.count %></p>
 </div>
