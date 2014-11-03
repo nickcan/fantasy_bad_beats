@@ -19,6 +19,6 @@ BadBeats.View = {
 
   switchToUpvoteComment: function(element, id, voteCount) {
     $(element).siblings('.vote_count').text(voteCount)
-    $(element).replaceWith("<a class='small-link vote_link' href='/comments/" + id + "/upvote'>Upvote</a>")
+    $(element).replaceWith("<a class='small-link upvote vote_link' href='/comments/" + id + "/upvote'><img src='/assets/fist_small.png'></a>")
   }
 };

@@ -42,6 +42,16 @@
   .beat_vote_container {
     float: right;
   }
+
+  .comment_vote_container {
+    position: relative;
+    float: right;
+    bottom: 2em;
+  }
+
+  .beat {
+    font-size: .8em;
+  }
 }
 
 @media screen and (max-width: 530px) {
